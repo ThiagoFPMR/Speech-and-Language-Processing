@@ -9,9 +9,7 @@ for index, word in enumerate(corpus):
     else:
         words.append(word)
 
-unigrams = {}
 
-tag_counter = {}
 
 print(corpus)
 print(words)
