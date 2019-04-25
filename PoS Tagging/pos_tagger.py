@@ -28,7 +28,6 @@ words = [word.replace('.', '') for word in words]
 words = [word.replace(',','') for word in words]
 tagged_words = list(zip(tags, words))
 tagged_text = "((S "
-
 for tags, words in tagged_words:
     tagged_text += "({} {}) ".format(tags, words)
 tagged_text = tagged_text.rstrip() + "))"
