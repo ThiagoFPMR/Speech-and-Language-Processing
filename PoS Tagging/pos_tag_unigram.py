@@ -15,8 +15,8 @@ for index, word in enumerate(corpus):
 unigrams = {} #definido o dicionario que será o output desse codigo e será usado pelo PoS Tagger.
 
 for word in set(words):
-    word_repetitions = [i for i, w in enumerate(words) if w == word]
-    rep_tags = [tags[ind] for ind in word_repetitions]
+    word_reps = [i for i, w in enumerate(words) if w == word]
+    rep_tags = [tags[ind] for ind in word_reps]
     tag_counts = {}
     for tag in set(rep_tags):
         tag_counts[tag] = rep_tags.count(tag)
