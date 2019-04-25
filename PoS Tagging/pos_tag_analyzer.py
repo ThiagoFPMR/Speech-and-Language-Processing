@@ -30,8 +30,6 @@ for word in set(words):
     else:
         unigrams[word] = 'UNK'
 
-print(unigrams)
-
 bigrams = {} #definido o dicionario que será o output desse codigo e será usado pelo PoS Tagger.
 
 bigram_list = []
@@ -57,5 +55,3 @@ for bigram in set(bigram_list):
     high_tag = [key for key, value in tag_counts.items() if value == high_tag_count]
     if sum(tag_counts.values()) > 0:
         bigrams[bigram] = high_tag[0]
-
-print(bigrams)
