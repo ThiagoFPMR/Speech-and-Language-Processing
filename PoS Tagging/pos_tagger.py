@@ -1,7 +1,7 @@
 #importar os dicionarios de unigramas e bigramas que indicam a tag mais provavel para uma dada palavra definidos pelo analyzer:
 import pos_tag_analyzer
 #separador de texto que não remove pontuação, visto que a existencia de pontuação pode afetar a classificação da palavra.
-text = "I, uh, don't like it. re"
+text = "I, uh, don't like it. re owo"
 words = text.split()
 tags = []
 #inicio do algoritimo do PoS tagger tendo os dados predefinidos:

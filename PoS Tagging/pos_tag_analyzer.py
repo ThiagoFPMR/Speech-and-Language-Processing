@@ -1,7 +1,7 @@
 
 #separador de tags e palvras:
-corpus = "((S (UBK re) (UBK re) (ARK re) (SBJ I) (NOUN uh) (NOT don't) (NOT don't) (NEXP like) (NEXP like) (OBJ it) (UNK re) ))"
-corpus = corpus.replace("(", "").replace(")", "").replace("S", "").split()
+corpus = "((S (UBK re) (UBK re) (ARK re) (SBJ I) (SBJ I) (NOUN uh) (NOT don't) (NOT don't) (NEXP like) (NEXP like) (OBJ it) (UNK re) ))"
+corpus = corpus.replace("(", "").replace(")", "").replace("S ", "").split()
 #definidas as duas listas que serão utilizadas pelo codigo para ter acesso as tags e as palavras (as duplas estão relacionadas pelos indices das listas)?
 tags = []
 words = []
