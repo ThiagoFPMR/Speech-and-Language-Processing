@@ -1,6 +1,6 @@
 
 #separador de tags e palvras:
-corpus = "((S (UNK re) (UNK re) (ARK re) (SBJ I) (NOUN uh) (NOT don't) (NEXP like) (OBJ it) (UNK re)))"
+corpus = "((S (UBK re) (UBK re) (ARK re) (SBJ I) (NOUN uh) (NOT don't) (NOT don't) (NEXP like) (NEXP like) (OBJ it) (UNK re) ))"
 corpus = corpus.replace("(", "").replace(")", "").replace("S", "").split()
 #definidas as duas listas que serão utilizadas pelo codigo para ter acesso as tags e as palavras (as duplas estão relacionadas pelos indices das listas)?
 tags = []
@@ -25,6 +25,9 @@ for word in set(words):
     #print(tag_counts)
     hight_tag_count = max(tag_counts.values())
     hight_tag = [key for key, value in tag_counts.items() if value == hight_tag_count]
-    unigrams[word] = hight_tag[0]
-
+    if sum(tag_counts.values()) > 1:
+        unigrams[word] = hight_tag[0]
+    else:
+        unigrams[word] = 'UNK'
+        
 print(unigrams)
