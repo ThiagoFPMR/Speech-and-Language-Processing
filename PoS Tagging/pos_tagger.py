@@ -33,4 +33,5 @@ tagged_text = "((S "
 for tags, words in tagged_words:
     tagged_text += "({} {}) ".format(tags, words)
 tagged_text = tagged_text.rstrip() + "))"
+
 print(tagged_text)
