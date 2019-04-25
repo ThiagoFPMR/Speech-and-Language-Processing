@@ -29,5 +29,5 @@ for word in set(words):
         unigrams[word] = hight_tag[0]
     else:
         unigrams[word] = 'UNK'
-        
+
 print(unigrams)
