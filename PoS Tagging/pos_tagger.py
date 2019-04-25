@@ -3,8 +3,8 @@ text = "I, uh, don't like it. re"
 words = text.split()
 tags = []
 #dicionarios de unigramas e bigramas que indicam a tag mais provavel para uma dada palavra (obitda através no analyzer).
-unigrams = {'I': 'SBJ', 'uh': 'NOUN', "don't":'NOT', 'like': 'EXP', 'it': 'OBJ'}
-bigrams = {"don't like": 'NEXP', 'like it': 'OBJ'}
+unigrams = {'I': 'SBJ', 'uh': 'NOUN', "don't":'NOT', 'like': 'EXP', 'it': 'ARG'}
+bigrams = {"NOT like": 'NEXP', 'NEXP it': 'OBJ'}
 #inicio do algoritimo do PoS tagger tendo os dados predefinidos:
 for index, word in enumerate(words):
     if index == 0 or words[index - 1].count(',') != 0 or words[index - 1].count('.') != 0:
@@ -16,7 +16,7 @@ for index, word in enumerate(words):
         #o primeiro if checa se a palavra anterior tem pontuação ou se não ha palavra anterior, então ele atribui um unigrama ou UNK baseado nos dados do dicionario.
     elif unigrams.get(word.replace(',', '').replace('.', '')):
         word = word.replace(',', '').replace('.', '')
-        bigram = words[index - 1] + " " + word
+        bigram = tags[index - 1] + " " + word
         if bigrams.get(bigram):
             tags.append(bigrams[bigram])
         #assumindo que há uma palavra anterior e a palavra estudada está presente no dicionarios de unigramas, tenta-se analisar com base em bigrama e, se falhar, com base em unigrama.
