@@ -21,7 +21,7 @@ for word in set(words):
         tag_counts[tag] = rep_tags.count(tag)
     word_tags = {}
     word_tags[word] = tag_counts #serve para caso eu queira ter uma contagem das tags para melhor vizualização (utilizar o print).
-    #print(tag_counts)
+    #print("{}:".format(word) + str(tag_counts))
     hight_tag_count = max(tag_counts.values())
     hight_tag = [key for key, value in tag_counts.items() if value == hight_tag_count]
     if sum(tag_counts.values()) > 1:
