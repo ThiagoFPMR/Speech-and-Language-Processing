@@ -1,12 +1,11 @@
 
-#separador de tags e palvras:
-corpus = "((S (UBK re) (UBK re) (ARK re) (SBJ I) (SBJ I) (NOUN uh) (NOT don't) (NOT don't) (NEXP like) (NEXP like) (OBJ it) (UNK re) ))"
-corpus = corpus.replace("(", "").replace(")", "").replace("S ", "").split()
+#lista de tags e palavras filtrada do corpus pelo corpora_interpreter.py:
+import corpora_interpreter
 #definidas as duas listas que serão utilizadas pelo codigo para ter acesso as tags e as palavras (as duplas estão relacionadas pelos indices das listas)?
 tags = []
 words = []
 #abaixo fica o separador que filtra o corpus fornecido para o training do tagger, o qual define os valores das listas de tags e words usando o corpus como base:
-for index, word in enumerate(corpus):
+for index, word in enumerate(corpora_interpreter.filtered_corpora):
     if index % 2 == 0:
         tags.append(word)
     else:
