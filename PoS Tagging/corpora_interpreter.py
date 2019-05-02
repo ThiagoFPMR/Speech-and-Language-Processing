@@ -1,6 +1,6 @@
 #corpus de treino que será importado diretamente dos arquivos.
-corpus = "(S (NP (NNP John)) (NP (NNP Mary))) (. .))"
-corpus = corpus.replace(',','').replace('.','')
+corpus = open('PoS Tagging/traindata').read()
+corpus = corpus.replace(',','').replace('.','').replace('\n','').replace('\n','')
 
 filtered_corpora = [] #o objetivo desse codigo é gerar uma lista no formato: ['tag', 'palavra', 'tag', ... 'palavra']
 
@@ -20,6 +20,6 @@ for i in range(len(corpus)):
         #a linha abaixo junta as letras para formar a string.
         tagged_word = ''.join(tagged_word)
         #a linha abaixo separa a string em duas: uma para a tag e outra para a palavra.
-        tag_word = tagged_word.split()
+        tag_word = tagged_word.split(' ')
         filtered_corpora.append(tag_word[0]) #adiciona a tag à lista.
         filtered_corpora.append(tag_word[1]) #adiciona a palavra à lista.
