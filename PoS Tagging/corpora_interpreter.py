@@ -1,5 +1,5 @@
 #corpus de treino que será importado diretamente dos arquivos.
-corpus = open('PoS Tagging/traindata').read()
+corpus = open('PoS Tagging/Corpora/traindata').read()
 corpus = corpus.replace(',','').replace('.','').replace('\n','').replace('\n','')
 
 filtered_corpora = [] #o objetivo desse codigo é gerar uma lista no formato: ['tag', 'palavra', 'tag', ... 'palavra']
