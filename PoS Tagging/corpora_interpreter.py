@@ -21,5 +21,6 @@ for i in range(len(corpus)):
         tagged_word = ''.join(tagged_word)
         #a linha abaixo separa a string em duas: uma para a tag e outra para a palavra.
         tag_word = tagged_word.split(' ')
-        filtered_corpora.append(tag_word[0]) #adiciona a tag à lista.
-        filtered_corpora.append(tag_word[1]) #adiciona a palavra à lista.
+        if tag_word[1] != '-NONE-':
+            filtered_corpora.append(tag_word[0]) #adiciona a tag à lista.
+            filtered_corpora.append(tag_word[1]) #adiciona a palavra à lista.
